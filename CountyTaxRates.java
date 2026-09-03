@@ -10,7 +10,7 @@ import java.util.Map;
  */
 
 public class CountyTaxRates {
-
+    public static final double STATE_RATE = 0.0295;
     public static final Map<String, Double> RATES = new LinkedHashMap<>();
 
     static {
@@ -107,6 +107,4 @@ public class CountyTaxRates {
         RATES.put("White", 0.0232);
         RATES.put("Whitley", 0.016829);
     }
-
-    public static final double STATE_RATE = 0.0295;
 }
