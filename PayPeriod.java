@@ -1,5 +1,6 @@
-/*
-    Defines the employee's pay period in terms of how many paychecks would be given throughout the year
+/**
+ * PayPeriod
+ * An enum for default values of each PayPeriod type that an employer would offer
  */
 public enum PayPeriod{
     DAILY(365),
@@ -7,14 +8,20 @@ public enum PayPeriod{
     BIWEEKLY(26),
     SEMI_MONTHLY(24),
     MONTHLY(12);
-
+    
     final int periodsPerYear;
-
+    /**
+     * Replaces the PayPeriods periodsPerYear variable with the integer number of how many paychecks the employee will receive in a year
+     * @param ppy The integer value if pay period is not a default defined value, not completely implemented yet to allow for input amount of pay periods per year
+     */
     PayPeriod(int ppy){
         this.periodsPerYear = ppy;
     }
 
-    //Makes it easier for me to prompt them to enter a pay period
+    /**
+     * @param choice The integer choice given by the prompted user, 1-5, defined by each case value
+     * @return A PayPeriod enum that holds the chosen number of payments per year for said employee
+     */
     public static PayPeriod input(int choice){
         switch(choice){
             case 1:

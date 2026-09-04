@@ -1,11 +1,14 @@
-/**
- * Main file that runs all prompts to enter raw numbers for income and exemptions and then it handles the rest using the actual Calculator file
- *  Once ran successfully, the output will be a table of values indicating the gross pay, deduction constant, taxable income, and state and county tax withheld for each
- *  pay period.
- */
 import java.util.Scanner;
-
+/**
+ * Calculator that prompts for the raw values of exemptions, gross pay, pay periods in a year, and county to compute the amount of withholding per paycheck.
+ * 
+ * @author Daniel Krutsick
+ */
 public class TaxableIncomeCalc{
+    /**
+     * Prints out the table of important values calculated for withholding money from paychecks
+     * @param prof
+     */
     private static void printSummaryTable(TaxProfile prof){
         double dedConstant = TotalDeductionCalc.calculateDedConst(prof);
         double taxIncome = TotalDeductionCalc.calcTaxableInc(prof, dedConstant);
@@ -23,7 +26,10 @@ public class TaxableIncomeCalc{
         System.out.format("%-27s%23.2f\n", "County Tax Withheld", countyTax);
         System.out.format("---------------------------------------------------------\n");
     }
-    public static void main(String[] args){
+    /**
+     * Main method, runs everything in order and formatted semi-nicely to help the employer to fill out prompts correctly
+     */
+    public static void main(){
         //Definitions
         Scanner in = new Scanner(System.in);//User Input
         boolean done = false;

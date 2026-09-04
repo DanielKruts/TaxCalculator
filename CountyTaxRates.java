@@ -3,12 +3,17 @@ import java.util.Map;
 
 /**
  * Used Claude to extract the data from the resource, How to Compute Withholding for State and County Income Tax in the resource
- *  directory. Pdf was taken from the Indiana Government's official website. 
+ *  directory. Pdf was taken from the Indiana Department of Revenue's official website. 
  * 
  * All values were double checked and confirmed were true, I have gone in and marked the values that are labeled as
  *  having been changed since the last departmental notice.
+ * 
+ * @see <a href="https://www.in.gov/dor/files/dn01.pdf">Departmental Notice #1</a>
  */
 
+/**
+ * Class of all county tax rates in Indiana
+ */
 public class CountyTaxRates {
     public static final double STATE_RATE = 0.0295;
     public static final Map<String, Double> RATES = new LinkedHashMap<>();

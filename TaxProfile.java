@@ -1,13 +1,28 @@
+/**
+ * TaxProfile
+ * Class that holds tax profile information. In a real implementation of this, the class would be used to make numerous profiles with id's indicating who's profile is who's
+ */
 public class TaxProfile{
-    double grossPayPerPeriod;//The total amount of money paid to the employee per paycheck
+    double grossPayPerPeriod;
     PayPeriod payPeriod;
-    int personalExemptions;//Range from military to disabilties for what is claimed in this section
-    int dependentExemptions;//Claiming any dependents/children under your name
-    int firstTimeDependentExemptions;//For the first year of claiming a dependent, another field with claims that is 1500 per
+    int personalExemptions;
+    int dependentExemptions;
+    int firstTimeDependentExemptions;
     int adoptedChildExemptions;
     String county;
 
-    //Constructor
+    /**
+     * Constructs a validated taxpayer profile
+     * 
+     * @param gpp The gross pay for a single pay period; non-negative
+     * @param pp Employee's frequency of pay
+     * @param persEx # of personal exemptions claimed
+     * @param depEx # of dependent exemptions claimed
+     * @param firstEx # of first-time dependent exemptions claimed
+     * @param adoptEx # of adopted child exemtpions claimed
+     * @param cty Employee's county of residence, must be valid Indiana County
+     * @throws IllegalArgumentException If grossPayPerPeriod is negative, any exemption count is negative, or county is not a recognized Indiana County
+     */
     public TaxProfile(double gpp, PayPeriod pp, int persEx, int depEx, int firstEx, int adoptEx, String cty){
         if(gpp < 0){
             throw new IllegalArgumentException("Gross pay cannot be negative " + gpp);
